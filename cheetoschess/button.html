@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Brutalism Button</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial Black', 'Helvetica', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: #F5F5DC;
+            padding: 20px;
+        }
+
+        .container {
+            text-align: center;
+        }
+
+        h1 {
+            margin-bottom: 40px;
+            font-size: 3rem;
+            color: #000;
+            text-transform: uppercase;
+            letter-spacing: -2px;
+        }
+
+        /* New Brutalism Button Styles */
+        .btn-brutal {
+            display: inline-block;
+            padding: 20px 40px;
+            font-size: 18px;
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #000;
+            background: #FFD700;
+            border: 4px solid #000;
+            cursor: pointer;
+            transition: all 0.1s ease;
+            box-shadow: 8px 8px 0px 0px #000;
+            text-decoration: none;
+            position: relative;
+        }
+
+        .btn-brutal:hover {
+            transform: translate(4px, 4px);
+            box-shadow: 4px 4px 0px 0px #000;
+        }
+
+        .btn-brutal:active {
+            transform: translate(8px, 8px);
+            box-shadow: 0px 0px 0px 0px #000;
+        }
+
+        /* Variant Styles */
+        .btn-brutal.primary {
+            background: #00FF00;
+        }
+
+        .btn-brutal.secondary {
+            background: #FF00FF;
+        }
+
+        .btn-brutal.danger {
+            background: #FF0000;
+            color: #FFF;
+        }
+
+        .btn-brutal.info {
+            background: #00FFFF;
+        }
+
+        .button-group {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-top: 30px;
+        }
+
+        /* Alternative: Raised/Pressed Effect */
+        .btn-brutal.pressed {
+            box-shadow: inset 4px 4px 0px 0px rgba(0, 0, 0, 0.3);
+        }
+
+        .btn-brutal.pressed:hover {
+            box-shadow: inset 2px 2px 0px 0px rgba(0, 0, 0, 0.3);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>New Brutalism Buttons</h1>
+        
+        <button class="btn-brutal">Click Me</button>
+        
+        <div class="button-group">
+            <button class="btn-brutal primary">Primary</button>
+            <button class="btn-brutal secondary">Secondary</button>
+            <button class="btn-brutal danger">Danger</button>
+            <button class="btn-brutal info">Info</button>
+            <button class="btn-brutal pressed">Pressed</button>
+        </div>
+    </div>
+</body>
+</html>
+
