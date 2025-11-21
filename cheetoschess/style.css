@@ -1,0 +1,404 @@
+:root {
+    --color-pink: #ff90e8;
+    --color-yellow: #ffc900;
+    --color-black: #000000;
+    --color-white: #ffffff;
+    --color-bg: #ffffff;
+    --color-text: #000000;
+    --border-width: 2px;
+    --border-radius: 0px;
+    /* Brutalist style usually has sharp or minimal radius */
+    --font-main: 'Space Grotesk', sans-serif;
+    --spacing-unit: 1rem;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: var(--font-main);
+    background-color: var(--color-bg);
+    color: var(--color-text);
+    line-height: 1.5;
+    overflow-x: hidden;
+    background-image: radial-gradient(var(--color-black) 1px, transparent 1px);
+    background-size: 20px 20px;
+}
+
+/* Utilities */
+.btn {
+    display: inline-block;
+    padding: 1rem 2rem;
+    font-weight: 700;
+    text-decoration: none;
+    border: var(--border-width) solid var(--color-black);
+    background-color: var(--color-white);
+    color: var(--color-black);
+    transition: transform 0.1s, box-shadow 0.1s;
+    cursor: pointer;
+}
+
+.btn:hover {
+    transform: translate(-2px, -2px);
+    box-shadow: 4px 4px 0px var(--color-black);
+}
+
+.btn:active {
+    transform: translate(0, 0);
+    box-shadow: 0 0 0 var(--color-black);
+}
+
+.btn-primary {
+    background-color: var(--color-black);
+    color: var(--color-white);
+}
+
+.btn-primary:hover {
+    background-color: var(--color-pink);
+    color: var(--color-black);
+}
+
+.btn-cta {
+    background-color: var(--color-pink);
+    font-size: 1.2rem;
+}
+
+/* Header */
+.site-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 2rem;
+    border-bottom: var(--border-width) solid var(--color-black);
+    position: sticky;
+    top: 0;
+    background: var(--color-white);
+    z-index: 100;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 900;
+    letter-spacing: -1px;
+}
+
+.site-header nav a {
+    margin: 0 1rem;
+    text-decoration: none;
+    color: var(--color-black);
+    font-weight: 500;
+}
+
+.site-header nav a:hover {
+    text-decoration: underline;
+}
+
+.header-actions {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+.btn-link {
+    text-decoration: none;
+    color: var(--color-black);
+    font-weight: 700;
+}
+
+/* Hero */
+.hero {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    min-height: 80vh;
+    border-bottom: var(--border-width) solid var(--color-black);
+}
+
+.hero-content {
+    padding: 4rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    border-right: var(--border-width) solid var(--color-black);
+    background-color: var(--color-yellow);
+    /* Gumroad often uses yellow or pink for hero */
+}
+
+.hero-content h1 {
+    font-size: 5rem;
+    line-height: 0.9;
+    margin-bottom: 2rem;
+    font-weight: 700;
+}
+
+.hero-content p {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+    max-width: 500px;
+}
+
+.hero-image {
+    background-color: var(--color-white);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Placeholder Graphic */
+.placeholder-graphic {
+    width: 300px;
+    height: 300px;
+    position: relative;
+}
+
+.shape-circle {
+    width: 200px;
+    height: 200px;
+    background: var(--color-pink);
+    border: var(--border-width) solid var(--color-black);
+    border-radius: 50%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.shape-rect {
+    width: 200px;
+    height: 200px;
+    background: var(--color-white);
+    border: var(--border-width) solid var(--color-black);
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    z-index: 1;
+}
+
+/* Social Proof */
+.social-proof {
+    border-bottom: var(--border-width) solid var(--color-black);
+    overflow: hidden;
+    white-space: nowrap;
+    padding: 1.5rem 0;
+    background: var(--color-white);
+}
+
+.marquee-content {
+    display: inline-block;
+    animation: marquee 20s linear infinite;
+}
+
+.marquee-content span {
+    font-size: 2rem;
+    font-weight: 300;
+    margin: 0 2rem;
+    font-family: "Space Grotesk", serif;
+    /* Fallback if var not working */
+}
+
+@keyframes marquee {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+/* Features */
+.feature-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    border-bottom: var(--border-width) solid var(--color-black);
+}
+
+.feature-text {
+    padding: 4rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-right: var(--border-width) solid var(--color-black);
+}
+
+.feature-row.reverse .feature-text {
+    border-right: none;
+    border-left: var(--border-width) solid var(--color-black);
+    order: 2;
+}
+
+.feature-text h2 {
+    font-size: 3.5rem;
+    margin-bottom: 1.5rem;
+    line-height: 1;
+}
+
+.feature-text p {
+    font-size: 1.25rem;
+    margin-bottom: 2rem;
+    max-width: 400px;
+}
+
+.feature-visual {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 4rem;
+    position: relative;
+}
+
+.bg-pink {
+    background-color: var(--color-pink);
+}
+
+.bg-black {
+    background-color: var(--color-black);
+}
+
+.feature-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.tag {
+    padding: 0.5rem 1rem;
+    border: var(--border-width) solid var(--color-black);
+    border-radius: 2rem;
+    font-weight: 600;
+    background: var(--color-white);
+    box-shadow: 2px 2px 0 var(--color-black);
+}
+
+/* Mock Elements */
+.mock-card {
+    width: 250px;
+    height: 350px;
+    background: var(--color-white);
+    border: var(--border-width) solid var(--color-black);
+    border-radius: 1rem;
+    box-shadow: 8px 8px 0 var(--color-black);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.card-header {
+    height: 150px;
+    background: var(--color-yellow);
+    border-bottom: var(--border-width) solid var(--color-black);
+}
+
+.card-body {
+    flex: 1;
+}
+
+.mock-interface {
+    width: 300px;
+    height: 200px;
+    background: var(--color-white);
+    border: var(--border-width) solid var(--color-white);
+    /* White border on black bg */
+    border-radius: 0.5rem;
+    padding: 1.5rem;
+}
+
+.interface-line {
+    height: 10px;
+    background: #ddd;
+    margin-bottom: 1rem;
+    border-radius: 5px;
+}
+
+.interface-line.short {
+    width: 50%;
+}
+
+/* CTA Section */
+.cta-section {
+    text-align: center;
+    padding: 6rem 2rem;
+    background-color: var(--color-white);
+    border-bottom: var(--border-width) solid var(--color-black);
+}
+
+.cta-section h2 {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+}
+
+.cta-section p {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+    color: #555;
+}
+
+/* Footer */
+.site-footer {
+    background-color: var(--color-black);
+    color: var(--color-white);
+    padding: 4rem 2rem;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-col h4 {
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+    color: var(--color-pink);
+}
+
+.footer-col a {
+    display: block;
+    color: var(--color-white);
+    text-decoration: none;
+    margin-bottom: 0.8rem;
+    font-size: 1.1rem;
+}
+
+.footer-col a:hover {
+    text-decoration: underline;
+    color: var(--color-yellow);
+}
+
+.footer-bottom {
+    margin-top: 4rem;
+    text-align: center;
+    opacity: 0.5;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+
+    .feature-row,
+    .feature-row.reverse {
+        grid-template-columns: 1fr;
+    }
+
+    .feature-text {
+        border-right: none;
+        border-left: none;
+        border-bottom: var(--border-width) solid var(--color-black);
+        padding: 3rem 2rem;
+    }
+
+    .feature-row.reverse .feature-text {
+        order: 0;
+        /* Reset order on mobile */
+        border-left: none;
+    }
+
+    .cta-section h2 {
+        font-size: 2.5rem;
+    }
+}
